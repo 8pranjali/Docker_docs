@@ -1,0 +1,12 @@
+#! /bin/bash
+touch Dockerfile
+echo "FROM ubuntu" >> Dockerfile
+docker build -t scripted .
+docker images
+docker login
+docker tag scripted:latest pranjali58/nautjos:v1
+docker push pranjali58/nautjos:v1
+aws configure
+aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 376045651106.dkr.ecr.us-west-1.amazonaws.com
+docker tag scripted:latest 376045651106.dkr.ecr.us-west-1.amazonaws.com/ecr_repo:v1
+docker push 376045651106.dkr.ecr.us-west-1.amazonaws.com/ecr_repo:v1
