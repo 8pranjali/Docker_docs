@@ -1,0 +1,10 @@
+--commands to push code to git--
+git clone https://github.com/8pranjali/Docker_docs.git
+cp script Docker_docs/
+cd Docker_docs/
+git add .
+git config --global user.email "pranjali2598@gmail.com"
+git config --global user.name "8pranjali"
+git commit -m 'committed the script file'
+git push
+--write the username and in password: put th access token (classic)
