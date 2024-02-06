@@ -1,0 +1,8 @@
+#! /bin/bash
+touch Dockerfile
+echo "FROM ubuntu" >> Dockerfile
+docker build -t envariable .
+docker images
+cat ~/password.txt | docker login --username pranjali58 --password-stdin
+docker tag envariable:latest pranjali58/nautjos:envar
+docker push pranjali58/nautjos:envar
