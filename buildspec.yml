@@ -9,10 +9,10 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...          
       - docker build -t demo1:latest .
-      - docker tag demo1:latest 376045651106.dkr.ecr.us-west-1.amazonaws.com/dev_repo:latest
+      - docker tag demo1:latest 376045651106.dkr.ecr.us-west-1.amazonaws.com/bar:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 376045651106.dkr.ecr.us-west-1.amazonaws.com/dev_repo:latest
+      - docker push 376045651106.dkr.ecr.us-west-1.amazonaws.com/bar:latest
 ...
